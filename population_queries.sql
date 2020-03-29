@@ -35,7 +35,7 @@ JOIN population_years
 WHERE name = 'Poland';
 
 -- How many countries have the word "The" in their name?
-SELECT name
+SELECT COUNT(*) AS 'Number countries with "the" in name'
 FROM countries
 WHERE name LIKE '%the%';
 
