@@ -12,7 +12,7 @@ WHERE continent = 'Oceania'
     AND year = 2005;
 
 -- What is the average population of countries in South America in 2003?
-SELECT AVG(population) AS 'Avg. South American country population (2003)'
+SELECT ROUND(AVG(population), 5) AS 'Avg. South American country population (2003)'
 FROM countries
 JOIN population_years
     ON countries.id = population_years.country_id
@@ -28,7 +28,11 @@ JOIN population_years
 WHERE year = 2007;
 
 -- What is the average population of Poland during the time period covered by this dataset?
-
+SELECT ROUND(AVG(population), 5) AS 'Avg. Poland population'
+FROM countries
+JOIN population_years
+    ON countries.id = population_years.country_id
+WHERE name = 'Poland';
 
 
 -- How many countries have the word "The" in their name?
