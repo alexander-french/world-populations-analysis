@@ -34,11 +34,16 @@ JOIN population_years
     ON countries.id = population_years.country_id
 WHERE name = 'Poland';
 
-
 -- How many countries have the word "The" in their name?
-
-
+SELECT name
+FROM countries
+WHERE name LIKE '%the%';
 
 -- What was the total population of each continent in 2010?
-
-
+SELECT continent,
+SUM(population) AS 'Population (2010)'
+FROM countries
+JOIN population_years
+    ON countries.id = population_years.country_id
+WHERE year = 2010
+GROUP BY continent;
